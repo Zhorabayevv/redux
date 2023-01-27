@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { useAppDispatch, useAppSelector } from "./store/hooks/redux";
+import { fetchUsers } from "./store/reducers/ActionCreators";
+import PostContainer from "./store/components/PostContainer";
+import PostContainer2 from "./store/components/PostContainer2";
 
 function App() {
+  // const dispatch = useAppDispatch();
+  // const { users, isLoading, error } = useAppSelector((state) => state.userReducer);
+
+  // React.useEffect(() => {
+  //   dispatch(fetchUsers());
+  // }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="title">Redux Toolkit</h1>
+      <div className="posts__div">
+        <PostContainer />
+        <PostContainer2 />
+      </div>
     </div>
   );
 }
